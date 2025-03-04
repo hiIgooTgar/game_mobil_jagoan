@@ -9,11 +9,12 @@ document.addEventListener("keyup", keyUp);
 document.addEventListener("keydown", keyDown);
 
 let keys = {
+  keyJ: false,
   ArrowLeft: false,
   ArrowRight: false,
 };
 
-let player = {speed: 5};
+let player = { speed: 5 };
 
 btnMulai.addEventListener("click", startGame);
 
@@ -52,7 +53,7 @@ function gamePlay() {
     score.innerHTML = "Score : " + player.score;
 
     var nama = user.value;
-    namaUser.textContent = "Player : " + nama;
+    namaUser.textContent = "Username : " + nama;
   }
 }
 
@@ -96,14 +97,15 @@ function moveEnemyCar(car) {
   });
 }
 
-function startGame() {
-  let playerName = user.value.trim();
-
-  if (playerName === "") {
-    alert("Masukkan nama pemain untuk memulai permainan!");
-    return;
+window.addEventListener("input", () => {
+  if (user.value.length > 0) {
+    btnMulai.disabled = false;
+  } else {
+    btnMulai.disabled = true;
   }
+});
 
+function startGame() {
   score.classList.remove("hide");
   namaUser.classList.remove("hide");
   startScreen.classList.add("hide");

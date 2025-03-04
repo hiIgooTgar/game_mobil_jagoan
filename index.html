@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mobil Jagoan</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="shortcut icon" href="./images/webiste.ico" type="image/x-icon">
-</head>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./images/webiste.ico" type="image/x-icon" />
+  </head>
 
-<body>
+  <body>
     <div class="carGame">
-        <div id="score" class="score hide"></div>
-        <div id="namaUser" class="namaUser hide"></div>
-        <div id="startScreen" class="startScreen">
-            <div class="title">
-                <h1>`Mobil Jagoan`</h1>
-                <div class="instruksi">
-                    <h4>Instruksi</h4>
-                    <ol>
-                        <li>Masukkan nama player untuk memulai permainan</li>
-                        <li>Arah kiri dan kanan untuk mengerakan mobil anda</li>
-                        <li>Hindari mobil mobilnya</li>
-                        <li>Enjoy di game</li>
-                    </ol>
-                </div>
-            </div>
-
-            <form id="startForm">
-                <div class="form-group">
-                    <input value="aaa" required type="text" name="user" id="user" placeholder="Masukkan nama player">
-                    <button type="button" id="btnMulai">Mulai</button>
-                </div>
-            </form>
-
+      <div id="score" class="score hide"></div>
+      <div id="namaUser" class="namaUser hide"></div>
+      <div id="startScreen" class="startScreen">
+        <div class="title">
+          <h1>`Mobil Jagoan`</h1>
+          <div class="instruksi">
+            <h4>Instruksi</h4>
+            <ol>
+              <li>Masukkan nama player untuk memulai permainan</li>
+              <li>Arah kiri dan kanan untuk mengerakan mobil anda</li>
+              <li>Hindari mobil mobilnya</li>
+              <li>Enjoy di game</li>
+            </ol>
+          </div>
         </div>
-        <div class="gameArea" id="gameArea"></div>
+
+        <form id="startForm">
+          <div class="form-group">
+            <input
+              required
+              type="text"
+              name="user"
+              id="user"
+              placeholder="Masukkan nama player"
+            />
+            <button type="button" disabled id="btnMulai">Mulai</button>
+          </div>
+        </form>
+      </div>
+      <div class="gameArea" id="gameArea"></div>
     </div>
 
     <script src="game.js"></script>
-</body>
-
+  </body>
 </html>
