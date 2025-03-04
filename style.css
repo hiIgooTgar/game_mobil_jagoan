@@ -1,0 +1,172 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.carGame {
+  width: 100vw;
+  height: 100vh;
+  background: url("./images//bg-game.png");
+  /* background-size: 100% 100%; */
+  background-repeat: no-repeat;
+}
+
+.startScreen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  z-index: 1;
+  margin: auto;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  background: #16abd8;
+  color: #fff;
+  padding: 1.3rem;
+  box-shadow: 0 5px 13px #aaa;
+  cursor: pointer;
+}
+/* 
+.startScreen::after {
+  background: #000;
+  position: absolute;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scale(0, 0);
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  z-index: 1;
+} */
+
+.startScreen .title h1 {
+  margin: 1rem 0;
+  font-size: 2rem;
+  font-style: italic;
+  text-align: center;
+  font-weight: 800;
+}
+
+.startScreen .instruksi {
+  padding: 1rem;
+}
+
+.startScreen .instruksi h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.startScreen .instruksi ol li {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.score {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  background: #16abd8;
+  width: 260px;
+  color: #fff;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 7px #aaa;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.namaUser {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: #16abd8;
+  width: 260px;
+  color: #fff;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 7px #aaa;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.form-group {
+  margin: 2rem 0;
+  display: block;
+}
+
+::placeholder {
+  font-size: 1.1rem;
+}
+
+.form-group input {
+  width: 100%;
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  font-size: 1.1rem;
+}
+
+.form-group button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  background: #00ffbb;
+  color: #000;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.form-group button:hover {
+  opacity: 0.85;
+}
+
+.hide {
+  display: none;
+}
+
+.car,
+.enemyCar {
+  width: 40px;
+  height: 70px;
+  background-image: url("./images//car5.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+}
+
+.gameArea {
+  width: 400px;
+  height: 100vh;
+  margin: auto;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  border-right: 10px dashed #fff000;
+  border-left: 10px dashed #fff000;
+}
+
+.line {
+  width: 13px;
+  background: #fff;
+  height: 100px;
+  position: absolute;
+  left: calc(50% - 13px);
+}
