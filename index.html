@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mobil Jagoan</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="shortcut icon" href="./images/webiste.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon/favicon.ico"
+      type="image/x-icon"
+    />
   </head>
 
   <body>
@@ -13,35 +17,43 @@
       <div id="score" class="score hide"></div>
       <div id="namaUser" class="namaUser hide"></div>
       <div id="startScreen" class="startScreen">
-        <div class="title">
-          <h1>`Mobil Jagoan`</h1>
-          <div class="instruksi">
-            <h4>Instruksi</h4>
-            <ol>
-              <li>Masukkan nama player untuk memulai permainan</li>
-              <li>Arah kiri dan kanan untuk mengerakan mobil anda</li>
-              <li>Hindari mobil mobilnya</li>
-              <li>Enjoy di game</li>
-            </ol>
+        <div class="content">
+          <div class="title">
+            <h1>Mobil Jagoan</h1>
+            <div class="instruksi">
+              <h4>Instruksi</h4>
+              <ol>
+                <li>Masukkan username player untuk memulai permainan</li>
+                <li>
+                  ArrowLeft/Key A dan ArrowRight/Key D untuk mengerakan mobil
+                  car anda
+                </li>
+                <li>
+                  Menghindari rintangan yaitu mobil mobil yang berlawan arah
+                </li>
+                <li>Dapatkan score tertinggi anda</li>
+                <li>Enjoy the game</li>
+              </ol>
+            </div>
           </div>
-        </div>
 
-        <form id="startForm">
-          <div class="form-group">
-            <input
-              required
-              type="text"
-              name="user"
-              id="user"
-              placeholder="Masukkan nama player"
-            />
-            <button type="button" disabled id="btnMulai">Mulai</button>
-          </div>
-        </form>
+          <main id="startForm">
+            <div class="form-group">
+              <input
+                required
+                type="text"
+                id="user"
+                autocomplete="off"
+                placeholder="Masukan username"
+              />
+              <button type="button" disabled id="btnMulai">Play Game</button>
+            </div>
+          </main>
+        </div>
       </div>
       <div class="gameArea" id="gameArea"></div>
     </div>
 
-    <script src="game.js"></script>
+    <script src="assets/js/game.js"></script>
   </body>
 </html>

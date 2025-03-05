@@ -5,27 +5,25 @@ const gameArea = document.getElementById("gameArea");
 const user = document.getElementById("user");
 const btnMulai = document.getElementById("btnMulai");
 
-document.addEventListener("keyup", keyUp);
-document.addEventListener("keydown", keyDown);
+btnMulai.addEventListener("click", startGame);
+let player = { speed: 5 };
 
 let keys = {
-  keyJ: false,
+  F11: false,
+  KeyA: false,
+  KeyD: false,
   ArrowLeft: false,
   ArrowRight: false,
 };
 
-let player = { speed: 5 };
-
-btnMulai.addEventListener("click", startGame);
-
 function keyUp(e) {
   e.preventDefault();
-  keys[e.key] = false;
+  keys[e.code] = false;
 }
 
 function keyDown(e) {
   e.preventDefault();
-  keys[e.key] = true;
+  keys[e.code] = true;
 }
 
 function gamePlay() {
@@ -36,22 +34,19 @@ function gamePlay() {
     moveLines();
     moveEnemyCar(car);
 
-    if (keys.ArrowLeft && player.x > 0) {
+    if ((keys.ArrowLeft || keys.KeyA) && player.x > 0) {
       player.x -= player.speed;
     }
 
-    if (keys.ArrowRight && player.x < road.width - 70) {
+    if ((keys.ArrowRight || keys.KeyD) && player.x < road.width - 60) {
       player.x += player.speed;
     }
 
-    car.style.top = `${player.y}px`;
     car.style.left = `${player.x}px`;
-
     window.requestAnimationFrame(gamePlay);
 
-    player.score++;
+    player.score += 5;
     score.innerHTML = "Score : " + player.score;
-
     var nama = user.value;
     namaUser.textContent = "Username : " + nama;
   }
@@ -110,6 +105,8 @@ function startGame() {
   namaUser.classList.remove("hide");
   startScreen.classList.add("hide");
   gameArea.innerHTML = "";
+  document.addEventListener("keyup", keyUp);
+  document.addEventListener("keydown", keyDown);
 
   player.start = true;
   player.score = 0;
@@ -136,13 +133,38 @@ function startGame() {
     enemyCar.setAttribute("class", "enemyCar");
     enemyCar.y = (i + 1) * 350 * -1;
     enemyCar.style.top = enemyCar.y + "px";
-    enemyCar.style.backgroundImage = `url("./images/car${i + 1}.png")`;
+    enemyCar.style.backgroundImage = `url("./assets/images/enemy/car${
+      i + 1
+    }.png")`;
     enemyCar.style.left = Math.floor(Math.random() * 350) + "px";
     gameArea.appendChild(enemyCar);
   }
 }
 
+function quitgame() {
+  window.location.reload();
+}
+
 function endGame() {
   player.start = false;
   startScreen.classList.remove("hide");
+  const gameOverScreen = document.createElement("section");
+  gameOverScreen.id = "screenGameOver";
+  gameOverScreen.innerHTML = `
+  <main>
+        <div class="content">
+          <h1>Game Over</h1>
+          <div class="detail">
+            <h5>Username : ${user.value}</h5>
+            <h5>Points : ${player.score}</h5>
+          </div>
+          <div class="btn-content">
+            <button id="restratGame">Restart</button>
+          </div>
+        </div>
+      </main>
+  `;
+
+  document.body.appendChild(gameOverScreen);
+  gameOverScreen.addEventListener("click", quitgame);
 }
