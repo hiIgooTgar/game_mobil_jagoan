@@ -14,14 +14,16 @@
 
   <body>
     <div class="carGame">
-      <div id="score" class="score hide"></div>
-      <div id="namaUser" class="namaUser hide"></div>
+      <div class="board">
+        <div id="namaUser" class="namaUser hide"></div>
+        <div id="score" class="score hide"></div>
+      </div>
       <div id="startScreen" class="startScreen">
         <div class="content">
           <div class="title">
             <h1>Mobil Jagoan</h1>
             <div class="instruksi">
-              <h4>Instruksi</h4>
+              <h4>Instruksi Game</h4>
               <ol>
                 <li>Masukkan username player untuk memulai permainan</li>
                 <li>
@@ -29,7 +31,7 @@
                   car anda
                 </li>
                 <li>
-                  Menghindari rintangan yaitu mobil mobil yang berlawan arah
+                  Menghindari rintangan yaitu mobil-mobil yang berlawan arah
                 </li>
                 <li>Dapatkan score tertinggi anda</li>
                 <li>Enjoy the game</li>
@@ -39,15 +41,24 @@
 
           <main id="startForm">
             <div class="form-group">
-              <input
-                required
-                type="text"
-                id="user"
-                autocomplete="off"
-                placeholder="Masukan username"
-              />
-              <button type="button" disabled id="btnMulai">Play Game</button>
+              <div class="form-content">
+                <input
+                  required
+                  type="text"
+                  id="user"
+                  autocomplete="off"
+                  placeholder="Masukan username"
+                />
+                <select id="levelGame">
+                  <option value="0">Pilih level</option>
+                  <option value="1">Easy</option>
+                  <option value="2">Normal</option>
+                  <option value="3">Hard</option>
+                  <option value="4">Very Hard</option>
+                </select>
+              </div>
             </div>
+            <button type="button" disabled id="btnMulai">Play Game</button>
           </main>
         </div>
       </div>

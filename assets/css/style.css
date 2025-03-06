@@ -6,12 +6,15 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary: #1a93ea;
+}
+
 .carGame {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   background: url("../images/bg-game.png");
-  /* background-size: 100% 100%; */
   background-repeat: no-repeat;
 }
 
@@ -31,38 +34,21 @@
   margin: auto;
   font-size: 0.8rem;
   letter-spacing: 2px;
-  background: #16abd8;
+  background: var(--primary);
   color: #fff;
-  padding: 1.3rem;
-  box-shadow: 0 5px 13px #aaa;
+  padding: 1.3rem 2.5rem;
   cursor: pointer;
 }
-/* 
-.startScreen::after {
-  background: #000;
-  position: absolute;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transform: scale(0, 0);
-  width: 100vw;
-  height: 100vh;
-  content: "";
-  z-index: 1;
-} */
 
 .startScreen .title h1 {
   margin: 1rem 0;
   font-size: 2rem;
-  font-style: italic;
   text-align: center;
   font-weight: 800;
 }
 
 .startScreen .instruksi {
-  padding: 1rem;
+  padding: 1rem 2.5rem;
 }
 
 .startScreen .instruksi h4 {
@@ -75,48 +61,48 @@
   font-weight: 500;
 }
 
-.score {
+/* board */
+.board {
   position: absolute;
   top: 20px;
+  overflow: hidden;
+  text-align: justify;
   left: 30px;
-  background: #16abd8;
-  width: 260px;
+  word-break: break-all;
+}
+
+.score {
+  background: var(--primary);
+  width: 350px;
   color: #fff;
   padding: 1.2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 7px #aaa;
-  text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .namaUser {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  background: #16abd8;
-  width: 260px;
+  background: var(--primary);
+  width: 350px;
   color: #fff;
   padding: 1.2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 7px #aaa;
-  text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .form-group {
-  margin: 2rem 0;
-  display: block;
+  margin: 2rem 0 0;
 }
 
 ::placeholder {
   font-size: 1.1rem;
 }
 
-.form-group input {
+.form-content {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 50% calc(50% - 1rem);
+}
+
+.form-content input,
+.form-content select {
   width: 100%;
   display: inline-block;
   padding: 0.6rem 1rem;

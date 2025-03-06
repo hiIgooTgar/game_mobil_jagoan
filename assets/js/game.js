@@ -4,9 +4,30 @@ const startScreen = document.getElementById("startScreen");
 const gameArea = document.getElementById("gameArea");
 const user = document.getElementById("user");
 const btnMulai = document.getElementById("btnMulai");
+const levelGame = document.getElementById("levelGame");
 
 btnMulai.addEventListener("click", startGame);
 let player = { speed: 5 };
+
+levelGame.addEventListener("change", () => {
+  if (levelGame.value == 1) {
+    player.speed = 5;
+  } else if (levelGame.value == 2) {
+    player.speed = 6;
+  } else if (levelGame.value == 3) {
+    player.speed = 7;
+  } else if (levelGame.value == 4) {
+    player.speed = 9;
+  }
+});
+
+window.addEventListener("input", () => {
+  if (user.value.length > 0 && levelGame.value != 0) {
+    btnMulai.disabled = false;
+  } else {
+    btnMulai.disabled = true;
+  }
+});
 
 let keys = {
   F11: false,
@@ -92,19 +113,14 @@ function moveEnemyCar(car) {
   });
 }
 
-window.addEventListener("input", () => {
-  if (user.value.length > 0) {
-    btnMulai.disabled = false;
-  } else {
-    btnMulai.disabled = true;
-  }
-});
-
 function startGame() {
   score.classList.remove("hide");
   namaUser.classList.remove("hide");
   startScreen.classList.add("hide");
   gameArea.innerHTML = "";
+
+  console.log(levelGame);
+
   document.addEventListener("keyup", keyUp);
   document.addEventListener("keydown", keyDown);
 
