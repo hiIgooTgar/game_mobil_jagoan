@@ -146,14 +146,13 @@ function startGame() {
   player.x = car.offsetLeft;
   player.y = car.offsetTop;
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 4; i++) {
     let enemyCar = document.createElement("div");
     enemyCar.setAttribute("class", "enemyCar");
     enemyCar.y = (i + 1) * 350 * -1;
     enemyCar.style.top = enemyCar.y + "px";
-    enemyCar.style.backgroundImage = `url("./assets/images/enemy/car${
-      i + 1
-    }.png")`;
+    randomEnemy = Math.floor(Math.random() * (9 - 0));
+    enemyCar.style.backgroundImage = `url("./assets/images/enemy/enemy${randomEnemy}.png")`;
     enemyCar.style.left = Math.floor(Math.random() * 350) + "px";
     gameArea.appendChild(enemyCar);
   }
