@@ -5,6 +5,7 @@ const gameArea = document.getElementById("gameArea");
 const user = document.getElementById("user");
 const btnMulai = document.getElementById("btnMulai");
 const levelGame = document.getElementById("levelGame");
+const levelView = document.getElementById("levelView");
 
 btnMulai.addEventListener("click", startGame);
 let player = { speed: 5 };
@@ -68,8 +69,10 @@ function gamePlay() {
 
     player.score += 5;
     score.innerHTML = "Score : " + player.score;
-    var nama = user.value;
+    let nama = user.value;
     namaUser.textContent = "Username : " + nama;
+    var level = levelGame.options[levelGame.selectedIndex].text;
+    levelView.textContent = "Level : " + level;
   }
 }
 
@@ -114,12 +117,11 @@ function moveEnemyCar(car) {
 }
 
 function startGame() {
-  score.classList.remove("hide");
   namaUser.classList.remove("hide");
+  score.classList.remove("hide");
+  levelView.classList.remove("hide");
   startScreen.classList.add("hide");
   gameArea.innerHTML = "";
-
-  console.log(levelGame);
 
   document.addEventListener("keyup", keyUp);
   document.addEventListener("keydown", keyDown);
@@ -162,6 +164,16 @@ function quitgame() {
 }
 
 function endGame() {
+  let showLevel;
+  if (levelGame.value == 1) {
+    showLevel = "Easy";
+  } else if (levelGame.value == 2) {
+    showLevel = "Normal";
+  } else if (levelGame.value == 3) {
+    showLevel = "Hard";
+  } else if (levelGame.value == 4) {
+    showLevel = "Very Hard";
+  }
   player.start = false;
   startScreen.classList.remove("hide");
   const gameOverScreen = document.createElement("section");
@@ -173,6 +185,7 @@ function endGame() {
           <div class="detail">
             <h5>Username : ${user.value}</h5>
             <h5>Points : ${player.score}</h5>
+            <h5>Level : ${showLevel}</h5>
           </div>
           <div class="btn-content">
             <button id="restratGame">Restart</button>

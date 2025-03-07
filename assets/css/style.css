@@ -36,12 +36,11 @@
   letter-spacing: 2px;
   background: var(--primary);
   color: #fff;
-  padding: 1.3rem 2.5rem;
+  padding: 2rem 2.5rem 2.5rem;
   cursor: pointer;
 }
 
 .startScreen .title h1 {
-  margin: 1rem 0;
   font-size: 2rem;
   text-align: center;
   font-weight: 800;
@@ -73,7 +72,15 @@
 
 .score {
   background: var(--primary);
-  width: 350px;
+  width: 380px;
+  color: #fff;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.levelView {
+  background: var(--primary);
+  width: 380px;
   color: #fff;
   padding: 1.2rem;
   font-size: 1.1rem;
@@ -81,7 +88,7 @@
 
 .namaUser {
   background: var(--primary);
-  width: 350px;
+  width: 380px;
   color: #fff;
   padding: 1.2rem;
   font-size: 1.1rem;
@@ -195,7 +202,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #dd1a1a;
+  background: var(--primary);
+  color: #fff;
   width: 50%;
 }
 
